@@ -1,3 +1,3 @@
-#Reverse an Array
+# Reverse an Array
 
 ![](reverse-array.png)
