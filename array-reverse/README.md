@@ -4,4 +4,4 @@ Given an array of numbers, reverse the values in the array without using any bui
 
 ## Whiteboard Process
 
-![](reverse-array.png)
+![](array-reverse.png)
