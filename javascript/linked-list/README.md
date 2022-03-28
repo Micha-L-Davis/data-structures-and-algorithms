@@ -22,6 +22,8 @@ Space Complexity: O(n)
 
 ## API
 
+### Basic functionality
+
 The class contains the following methods:
 * `insert`
   * Arguments: value
@@ -35,3 +37,16 @@ The class contains the following methods:
   * Arguments: none
   * Returns: a string representing all the values in the Linked List, formatted as:
   * `"[ a ] -> [ b ] -> [ c ] -> NULL"`
+
+### Insertions
+
+* `append`
+  * arguments: new value
+  * adds a new node with the given `value` to the end of the list.
+* `insertBefore`
+  * arguments: value, new value
+  * adds a new node with the given `newValue` to the list immediately before the first node that has the `value` specified
+* `insertAfter`
+  * arguments: value, new value
+  * adds a new node with the given  `new value` to the list immediately after the first node that has the `value` specified
+
