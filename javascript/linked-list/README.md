@@ -6,7 +6,7 @@ Implementation of a singly linked list in JavaScript
 
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 * Create a Linked List class
-* Within your Linked List class, include a head property.
+* Within the Linked List class, include a head property.
 * Upon instantiation, an empty Linked List should be created.
 
 ## Approach & Efficiency
@@ -37,6 +37,10 @@ The class contains the following methods:
   * Arguments: none
   * Returns: a string representing all the values in the Linked List, formatted as:
   * `"[ a ] -> [ b ] -> [ c ] -> NULL"`
+* `kthFromEnd`
+  * Arguments: k
+  * Returns: the value of the node found k nodes from the end of the list.
+
 
 ### Insertions
 
@@ -49,4 +53,3 @@ The class contains the following methods:
 * `insertAfter`
   * arguments: value, new value
   * adds a new node with the given  `new value` to the list immediately after the first node that has the `value` specified
-
