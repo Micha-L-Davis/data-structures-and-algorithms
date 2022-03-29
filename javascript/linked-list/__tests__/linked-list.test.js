@@ -1,11 +1,13 @@
 'use strict';
 
-const { it } = require('eslint/lib/rule-tester/rule-tester');
+const { it, describe } = require('eslint/lib/rule-tester/rule-tester');
 // Require our linked list implementation
 const LinkedList = require('../index');
 
+let linkedList = new LinkedList();
+
 describe('Linked List Tests', () => {
-  let linkedList = new LinkedList();
+
 
   it('should create an empty linked list', () => {
     expect(linkedList.head).toEqual(null);
@@ -54,4 +56,37 @@ describe('Linked List Tests', () => {
     expect(linkedList.toString())
       .toEqual('[A] -> [B] -> [C] -> [D] -> [E] -> [F] -> [G] -> [A] -> NULL');
   });
+});
+
+describe('kthFromEnd tests', () => {
+  it('should return null if k is greater than the length of the list', () => {
+    let testResult = linkedList.kthFromEnd(9);
+
+    expect(testResult).toEqual(null);
+  });
+
+  it('should return the last node value if k and the count of the list are the same', () => {
+    let testResult = linkedList.kthFromEnd(8);
+
+    expect(testResult).toEqual('A');
+  });
+
+  it('should return null if k is not a positive integer', () => {
+    let testResult = linkedList.kthFromEnd(-1);
+
+    expect(testResult).toEqual(null);
+  });
+
+  it('should return the head if the list has a count of 1', () => {
+    let testResult = linkedList.kthFromEnd(1);
+
+    expect(testResult).toEqual(linkedList.head.value);
+  });
+
+  it('should navigate to the middle of the list', () => {
+    let testResult = linkedList.kthFromEnd(4);
+
+    expect(testResult).toEqual('E');
+  });
+
 });

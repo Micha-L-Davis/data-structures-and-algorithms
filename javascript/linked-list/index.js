@@ -10,11 +10,12 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.count = 0;
   }
 
   insert(value) {
     let newNode = new Node(value);
-
+    this.count++;
     newNode.next = this.head;
     this.head = newNode;
   }
@@ -44,6 +45,7 @@ class LinkedList {
 
   append(value) {
     let newNode = new Node(value);
+    this.count++;
     let currentNode = this.head;
 
     while (currentNode.next) {
@@ -55,6 +57,7 @@ class LinkedList {
 
   insertBefore(value, newValue) {
     let newNode = new Node(newValue);
+    this.count++;
     let currentNode = this.head;
 
     while (currentNode.next.value !== value) {
@@ -67,6 +70,7 @@ class LinkedList {
 
   insertAfter(value, newValue) {
     let newNode = new Node(newValue);
+    this.count++;
     let currentNode = this.head;
 
     while (currentNode.value !== value) {
@@ -75,6 +79,22 @@ class LinkedList {
 
     newNode.next = currentNode.next;
     currentNode.next = newNode;
+  }
+
+  kthFromEnd(k) {
+    let currentNode = this.head;
+    let target = this.count - k;
+    if (k > this.count || k < 0) {
+      return null;
+    }
+    if (k === 1) {
+      return this.head.value;
+    }
+    while (target) {
+      currentNode = currentNode.next;
+      target--;
+    }
+    return currentNode.value;
   }
 }
 
