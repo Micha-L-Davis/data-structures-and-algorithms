@@ -90,3 +90,26 @@ describe('kthFromEnd tests', () => {
   });
 
 });
+
+describe('list zip tests', () => {
+
+  it('should zip two lists together and return a unified linked list', () => {
+    let listX = new LinkedList();
+    let listY = new LinkedList();
+    let listXData = ['A', 'C', 'E', 'G'];
+    let listYData = ['B', 'D', 'F', 'H'];
+
+    while (listXData.length) {
+      listX.insert(listXData.pop());
+    }
+    while (listYData.length) {
+      listY.insert(listYData.pop());
+    }
+
+    let zippedList = new LinkedList();
+    zippedList.zipLists(listX, listY);
+    expect(zippedList.head.value).toEqual('A');
+    expect(zippedList.count).toEqual(listX.count + listY.count);
+    expect(zippedList.toString()).toEqual('[A] -> [B] -> [C] -> [D] -> [E] -> [F] -> [G] -> [H] -> NULL');
+  });
+});

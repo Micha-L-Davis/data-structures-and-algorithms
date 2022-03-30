@@ -37,10 +37,6 @@ The class contains the following methods:
   * Arguments: none
   * Returns: a string representing all the values in the Linked List, formatted as:
   * `"[ a ] -> [ b ] -> [ c ] -> NULL"`
-* `kthFromEnd`
-  * Arguments: k
-  * Returns: the value of the node found k nodes from the end of the list.
-
 
 ### Insertions
 
@@ -53,3 +49,14 @@ The class contains the following methods:
 * `insertAfter`
   * arguments: value, new value
   * adds a new node with the given  `new value` to the list immediately after the first node that has the `value` specified
+
+### Other Methods
+
+* `kthFromEnd`
+  * Arguments: k
+  * Returns: the value of the node found k nodes from the end of the list.
+* `zipLists`
+  * Arguments: list1, list2
+  * edits `this` list to contain the values of the provided lists, alternating between them each loop.
+
+  ![zipLists diagram](./assets/brave_49gQOo7xWP.png)
