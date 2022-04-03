@@ -2,7 +2,7 @@
 
 const { it, describe } = require('eslint/lib/rule-tester/rule-tester');
 // Require our linked list implementation
-const LinkedList = require('../index');
+const { LinkedList } = require('../index');
 
 let linkedList = new LinkedList();
 
