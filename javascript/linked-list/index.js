@@ -115,4 +115,90 @@ class LinkedList {
   }
 }
 
-module.exports = LinkedList;
+class Stack {
+  constructor() {
+    this.top = null;
+    this.count = 0;
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+
+    newNode.next = this.top;
+    this.top = newNode;
+    this.count++;
+  }
+
+  pop() {
+    if (this.isEmpty()) {
+      console.error('Cannot pop from an empty stack');
+      return null;
+    }
+    const toPop = this.top;
+    this.top = toPop.next;
+    toPop.next = null;
+    this.count--;
+    return toPop.value;
+  }
+
+  peek() {
+    return !this.isEmpty() ?
+      this.top.value :
+      console.error('Cannot peek at an empty stack');
+  }
+
+  isEmpty() {
+    return this.count === 0;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.front = null;
+    this.rear = null;
+    this.count = 0;
+  }
+
+  enqueue(value) {
+    const newNode = new Node(value);
+    if (!this.isEmpty()) {
+      this.rear.next = newNode;
+    }
+    else {
+      this.front = newNode;
+    }
+    this.rear = newNode;
+    this.count++;
+  }
+
+  dequeue() {
+    if (this.isEmpty()) {
+      console.error('Cannot dequeue from an empty queue');
+      return null;
+    }
+    const nodeToDequeue = this.front;
+    this.front = this.front.next;
+    if (!nodeToDequeue.next) {
+      this.rear = null;
+    }
+    nodeToDequeue.next = null;
+    this.count--;
+    return nodeToDequeue.value;
+  }
+
+  peek() {
+    return !this.isEmpty() ?
+      this.front.value :
+      console.error('Cannot peek at an empty queue');
+  }
+
+  isEmpty() {
+    return (this.front === null);
+  }
+}
+
+module.exports = {
+  LinkedList,
+  Stack,
+  Queue,
+};
