@@ -60,3 +60,42 @@ The class contains the following methods:
   * edits `this` list to contain the values of the provided lists, alternating between them each loop.
 
   ![zipLists diagram](./assets/brave_49gQOo7xWP.png)
+
+
+### Stack
+
+* `push`
+  * Arguments: value
+  * Adds the value to a new node in the stack.
+
+* `pop`
+  * Arguments: none
+  * Returns: removes the top node from the stack and returns its value.
+
+* `peek`
+  * Arguments: none
+  * Returns: the value of the top node of the stack.
+
+### Queue
+
+* `enqueue`
+  * Arguments: value
+  * Adds the value to a new node and places it at the rear of the queue.
+
+* `dequeue`
+  * Arguments: none
+  * Returns: removes the first node from the queue and returns its value.
+
+* `peek`
+  * Arguments: none
+  * Returns: the value of the first node of the queue.
+
+
+![](./assets/Stack-and-Queue-Insertion.png)
+![](./assets/Stack-and-Queue-Extraction.png)
+
+### Pseudo-Queue
+
+An implementation of a queue using two stacks. Same methods Queue (above).
+
+![](./assets/Pseudo-Queue.png)
