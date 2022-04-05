@@ -1,7 +1,5 @@
 'use strict';
 
-const { it, describe } = require('eslint/lib/rule-tester/rule-tester');
-
 const { Queue } = require('../index');
 
 let queue = new Queue();
