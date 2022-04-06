@@ -99,3 +99,7 @@ The class contains the following methods:
 An implementation of a queue using two stacks. Same methods Queue (above).
 
 ![](./assets/Pseudo-Queue.png)
+
+### Bracket Validation
+
+![](./assets/bracket-validation.png)
