@@ -100,6 +100,10 @@ An implementation of a queue using two stacks. Same methods Queue (above).
 
 ![](./assets/Pseudo-Queue.png)
 
+### Animal Shelter
+
+This is a version of the usual queue, but with the added functionality of type-checking the elements to be added.  The `enqueue` method operates as normal, but will only accept objects made with the Animal constructor of either the Cat or Dog subtype. Two queues are maintained, one for each animal type. The `dequeue` method now requires a `pref` argument, which is a string of either 'cat' or 'dog', indicating which queue should be dequeued.
+
 ### Bracket Validation
 
 ![](./assets/bracket-validation.png)
