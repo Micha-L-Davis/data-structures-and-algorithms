@@ -51,6 +51,11 @@ class BinaryTree {
     traverse(this.root);
     return results;
   }
+
+  getMaxValue() {
+    let values = this.inOrderToArray();
+    return Math.max(...values);
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
