@@ -1,5 +1,6 @@
 'use strict';
 
+const { it } = require('eslint/lib/rule-tester/rule-tester');
 const { BinarySearchTree } = require('../trees.js');
 
 let searchTree = new BinarySearchTree();
@@ -62,5 +63,11 @@ describe('Binary tree tests', () => {
     expect(trueResult).toEqual(true);
     expect(falseResult).toEqual(false);
     expect(console.error).toHaveBeenCalledWith('The tree is empty!');
+  });
+
+  it('Can successfully return the highest value in the tree', () => {
+    let maxValue = searchTree.getMaxValue();
+
+    expect(maxValue).toEqual(10);
   });
 });
