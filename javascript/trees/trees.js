@@ -52,6 +52,21 @@ class BinaryTree {
     return results;
   }
 
+  breadthFirstToArray() {
+    let results = [];
+    let currentNode = this.root;
+    let childNodes = [currentNode];
+
+    while (childNodes.length) {
+      currentNode = childNodes.pop();
+      results.push(currentNode.value);
+      if (currentNode.left) childNodes.unshift(currentNode.left);
+      if (currentNode.right) childNodes.unshift(currentNode.right);
+    }
+
+    return results;
+  }
+
   getMaxValue() {
     let values = this.inOrderToArray();
     return Math.max(...values);
