@@ -54,6 +54,12 @@ describe('Binary tree tests', () => {
     expect(postOrder).toEqual([4, 6, 5, 8, 10, 9, 7]);
   });
 
+  it('Can successfully return a collection from a breadth-first traversal', () => {
+    let breadthFirst = searchTree.breadthFirstToArray();
+
+    expect(breadthFirst).toEqual([7, 5, 9, 4, 6, 8, 10]);
+  });
+
   it('Returns true or false for the contains method, given an existing or non-existing node value', () => {
     let trueResult = searchTree.contains(4);
     let falseResult = searchTree.contains(11);
