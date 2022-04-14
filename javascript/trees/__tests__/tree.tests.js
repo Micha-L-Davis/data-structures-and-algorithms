@@ -1,6 +1,5 @@
 'use strict';
 
-const { it } = require('eslint/lib/rule-tester/rule-tester');
 const { BinarySearchTree } = require('../trees.js');
 
 let searchTree = new BinarySearchTree();
