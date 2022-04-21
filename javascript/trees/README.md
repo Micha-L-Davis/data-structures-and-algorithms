@@ -19,3 +19,4 @@ Depth first search is done recursively with O(log n) efficiency.
 * `getMaxValue` - arguments: none, returns: the value of the highest number in the tree.
 * `contains` - (binary search tree only) arguments: a value to search for, returns: true if value present.
 * `add` - (binary search tree only) arguments: a value to insert, returns: undefined.
+* `fizzbuzztree` - (k-ary tree only) arguments: a k-ary tree, returns: a new k-ary tree with identical structure, but with the classic "fizz buzz" algorithm applied to each node's value.
