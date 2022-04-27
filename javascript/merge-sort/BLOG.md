@@ -50,3 +50,5 @@ Let's take a look at that happening.
 5. Repeat of 4, but now with a lopsided array. The highest value gets tacked on at the end.
 6. Merging the last two arrays of three values in order.
 7. The plane crashes.
+
+![Lotto ticket with sorted array (and impending doom)](https://cdn.quotesgram.com/img/69/59/1554941873-1340604360_hurnums.jpg)
