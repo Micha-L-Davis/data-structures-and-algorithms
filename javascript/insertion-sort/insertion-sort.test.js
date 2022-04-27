@@ -1,6 +1,5 @@
 `use strict`;
 
-const { it } = require('eslint/lib/rule-tester/rule-tester');
 const insertionSort = require('./insertion-sort');
 
 describe('Insertion Sort tests', () => {
