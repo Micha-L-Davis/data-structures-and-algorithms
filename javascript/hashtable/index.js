@@ -9,7 +9,7 @@ class Hashtable {
   }
 
   hash(key) {
-    let characters = key.split('');
+    let characters = `${key}`.split('');
     let asciiSum = characters.reduce((sum, char) => {
       return sum + char.charCodeAt(0);
     }, 0);
