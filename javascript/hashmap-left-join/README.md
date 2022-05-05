@@ -10,7 +10,7 @@ Write a function that LEFT JOINs two hashmaps into a single data structure.
 * Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
 
 ## Approach & Efficiency
-Approach is a simple iteration over one of the hashmaps, with *O(n)* time complexity.
+Approach is a simple iteration over one of the hashmaps, checking each key against the other, and recording the appropriate result. Operations complete with *O(n)* time complexity.
 
 ## Solution
 ![](hashmap-left-join.png)
