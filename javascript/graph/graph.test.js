@@ -58,6 +58,12 @@ describe('Graph Tests', () => {
     expect(nodes).toEqual([E]);
     expect(neighbors.length).toEqual(1);
   });
+
+  test('Should return a collection of all nodes connected to a given node, breadth first', () => {
+    let array = graph.breadthFirst(A);
+
+    expect(array).toEqual(['B', 'C', 'D', 'A']);
+  });
 });
 
 
