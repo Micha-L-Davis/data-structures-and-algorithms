@@ -11,7 +11,7 @@ The basic functions of the graph are provided through three classes:
   * the `Edge` class, which maintains each instance of node-to-node connection (and an optional `weight` cost).
   * the `Graph` contains a hashmap which holds an array of adjacent (ie. connected via an edge) nodes for each node key.
 
-Operations listed below are performed in *O(1)* time.
+Read/Write operations are performed in *O(1)* time. Traversal happens in *O(log n)* time.
 
 ## API
 * `add node`
@@ -34,3 +34,6 @@ Operations listed below are performed in *O(1)* time.
 * `size`
   * Arguments: none
   * Returns the total number of nodes in the graph
+* `breadthFirst`
+  * Arguments: a node in the graph
+  * Returns an array with the values of the elements in the graph connected to the node, breadth first.
