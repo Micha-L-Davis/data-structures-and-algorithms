@@ -9,12 +9,13 @@ class Hashtable {
   }
 
   hash(key) {
-    let characters = key.split('');
+    let characters = `${key}`.split('');
     let asciiSum = characters.reduce((sum, char) => {
       return sum + char.charCodeAt(0);
     }, 0);
 
     let initialHash = asciiSum * 599;
+
     return initialHash % 1024;
   }
 
@@ -35,14 +36,13 @@ class Hashtable {
 
   get(key) {
     let position = this.hash(key);
-
+    let value = null;
     if (this.buckets[position]) {
       let bucket = this.buckets[position];
       let node = this.searchInBucket(bucket, key);
-      let value = node.value[key];
-      return value;
+      value = node.value[key];
     }
-    return null;
+    return value;
   }
 
   contains(key) {
@@ -54,14 +54,20 @@ class Hashtable {
     return result;
   }
 
-  keys() {
+  keys(value = null) {
     let result = [];
     this.buckets.map((bucket) => {
       if (bucket) {
         let current = bucket.head;
         while (current) {
           let keys = Object.keys(current.value);
-          result = [...result, ...keys];
+          if (value === null) {
+            result = [...result, ...keys];
+          } else {
+            if (current.value[keys[0]] === value) {
+              result = [...result, ...keys];
+            }
+          }
           current = current.next;
         }
       }

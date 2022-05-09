@@ -21,8 +21,7 @@ class BinaryTree {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
     };
-
-    traverse(this.root);
+    if (this.root) traverse(this.root);
     return results;
   }
 
