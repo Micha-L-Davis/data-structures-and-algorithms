@@ -44,6 +44,28 @@ class Graph {
   size() {
     return this.getNodes().length;
   }
+
+  breadthFirst(root, cb) {
+    const queue = [root];
+    const visited = new Set();
+    let current = null;
+
+    while (queue.length) {
+      current = queue.pop();
+
+      if (cb) cb(current.value);
+
+      const neighbors = this.getNeighbors(current);
+      for (let edge of neighbors) {
+        if (!visited.has(edge.node)) {
+          visited.add(edge.node);
+          queue.unshift(edge.node);
+        }
+      }
+    }
+
+    return Array.from(visited.keys()).map((node) => node.value);
+  }
 }
 
 module.exports = Graph;
