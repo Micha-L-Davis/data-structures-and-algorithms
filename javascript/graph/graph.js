@@ -7,7 +7,7 @@ class Node {
 }
 
 class Edge {
-  constructor(node, weight = 1) {
+  constructor(node, weight = 0) {
     this.node = node;
     this.weight = weight;
   }
@@ -25,7 +25,7 @@ class Graph {
     return node;
   }
 
-  addEdge(firstNode, secondNode, weight = 1) {
+  addEdge(firstNode, secondNode, weight = 0) {
     const firstNeighbors = this.getNeighbors(firstNode);
     const secondNeighbors = this.getNeighbors(secondNode);
 
@@ -45,7 +45,7 @@ class Graph {
     return this.getNodes().length;
   }
 
-  breadthFirst(root, cb) {
+  breadthFirst(root, callback) {
     const queue = [root];
     const visited = new Set();
     let current = null;
@@ -53,7 +53,7 @@ class Graph {
     while (queue.length) {
       current = queue.pop();
 
-      if (cb) cb(current.value);
+      if (callback) callback(current);
 
       const neighbors = this.getNeighbors(current);
       for (let edge of neighbors) {
