@@ -37,6 +37,9 @@ Read/Write operations are performed in *O(1)* time. Traversal happens in *O(log 
 * `breadthFirst`
   * Arguments: a node in the graph
   * Returns an array with the values of the elements in the graph connected to the node, breadth first.
+* `depthFirst`
+  * Arguments: a node in the graph
+  * Returns an array with the values of the elements in the graph connected to the node, depth first.
 * `businessTrip`
   * Arguments: a graph (`connectionMap`) and an array of node values (`itinerary`) to visit.
   * Returns the aggregate weight of edges between each node in the graph corresponding to the itinerary values, or null if a direct trip is impossible.
