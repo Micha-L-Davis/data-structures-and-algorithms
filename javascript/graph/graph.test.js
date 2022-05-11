@@ -40,11 +40,11 @@ describe('Graph Tests', () => {
 
     expect(aNeighbors.length).toBe(3);
     expect(cNeighbors.length).toBe(2);
-    expect(aNeighbors[0].weight).toBe(1);
+    expect(aNeighbors[0].weight).toBe(0);
     expect(aNeighbors[1].weight).toBe(1.5);
     expect(aNeighbors[2].weight).toBe(2);
     expect(cNeighbors[0].weight).toBe(1.5);
-    expect(cNeighbors[1].weight).toBe(1);
+    expect(cNeighbors[1].weight).toBe(0);
   });
 
   test('A graph with only one node and edge can be properly returned', () => {
@@ -60,9 +60,11 @@ describe('Graph Tests', () => {
   });
 
   test('Should return a collection of all nodes connected to a given node, breadth first', () => {
-    let array = graph.breadthFirst(A);
-
-    expect(array).toEqual(['B', 'C', 'D', 'A']);
+    let arrayFromBreadth = graph.breadthFirst(A);
+    let arrayFromDepth = graph.depthFirst(A);
+    console.log(arrayFromDepth);
+    expect(arrayFromBreadth).toEqual(['B', 'C', 'D', 'A']);
+    expect(arrayFromDepth).toEqual(['A', 'B', 'C', 'D']);
   });
 });
 
