@@ -66,6 +66,29 @@ class Graph {
 
     return Array.from(visited.keys()).map((node) => node.value);
   }
+
+  depthFirst(root, callback) {
+    const stack = [root];
+    const visited = new Set();
+    visited.add(root);
+    let current = null;
+
+    while (stack.length) {
+      current = stack.pop();
+
+      if (callback) callback(current.value);
+
+      const neighbors = this.getNeighbors(current);
+      for (let edge of neighbors) {
+        if (!visited.has(edge.node)) {
+          visited.add(edge.node);
+          stack.push(edge.node);
+        }
+      }
+    }
+
+    return Array.from(visited.keys()).map((node) => node.value);
+  }
 }
 
 module.exports = Graph;
